@@ -56,6 +56,7 @@ def AddEmp():
         # Uplaod image file in S3 #
         emp_image_file_name_in_s3 = "emp-id-" + str(emp_id) + "_image_file"
         s3 = boto3.resource('s3')
+        the_bucket = s3.Bucket('my_bucket')
 
         try:
             print("Data inserted in MySQL RDS... uploading image to S3...")
